@@ -1,0 +1,6 @@
+.idea/
+.tox/
+.circleci/
+README.md
+.DS_Store
+*.pyc

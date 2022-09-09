@@ -7,6 +7,6 @@ def test_click_sing_in_button(browser):
     sleep(2)
     main_page.open_base_page()
     sleep(2)
-    # main_page.should_be_main_page()
+    main_page.should_be_main_page()
 
 

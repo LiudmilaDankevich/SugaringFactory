@@ -11,7 +11,7 @@ class MainPage(BasePage):
 #
     def main_page_text_is_present(self):
         auth_text = self.find_element(MainPageLocator.LOCATOR_MAIN_PAGE_TEXT).text
-        check_text = 'The best sugaring paste you can find on the beauty market.'
+        check_text = 'Learn Why'
         assert auth_text == check_text, f'{auth_text} is not eq {check_text}'
 #
 #

@@ -3,6 +3,7 @@ from locator.login_in_locator import LoginPageLocator
 
 
 class LoginPage(BasePage):
+
     def open_login(self):
         log_in_button = self.find_element(LoginPageLocator.LOCATOR_LOG_IN_BUTTON)
         log_in_button.click()

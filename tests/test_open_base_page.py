@@ -9,12 +9,7 @@ def test_open_main_page(browser):
     main_page.open_base_page()
     sleep(2)
     main_page.should_be_main_page()
-    login_page = LoginPage(browser)
-    sleep(2)
-    login_page.open_login()
-    sleep(5)
-    login_page.login('dan2510@gmail.com', '1111')
-    sleep(5)
+
 
 # def test_click_sing_in_button(browser):
 #     login_page = LoginPage(browser)

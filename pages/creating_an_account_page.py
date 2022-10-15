@@ -1,5 +1,9 @@
 from pages.base_page import BasePage
 from locator.creating_an_account_locator import CreatingAccountPageLocator
+from selenium.webdriver.support.ui import Select
+from time import sleep
+from selenium.webdriver.chrome.options import Options
+
 
 
 class CreatingAccountPage(BasePage):
@@ -38,11 +42,18 @@ class CreatingAccountPage(BasePage):
         city_field.send_keys(city)
         zip_code_field = self.find_element(CreatingAccountPageLocator.LOCATOR_ZIP_CODE)
         zip_code_field.send_keys(zip_code)
-        # Выбор элемента не сделан
-        # country_field = self.find_element(CreatingAccountPageLocator.LOCATOR_COUNTRY)
-        # country_field.click()
+        sleep(2)
+        country_field = self.find_element(CreatingAccountPageLocator.LOCATOR_COUNTRY)
+        country_field.click()
+        sleep(5)
         # region_field = self.find_element(CreatingAccountPageLocator.LOCATOR_REGION)
         # region_field.click()
+        # country_field_florida = self.find_element(CreatingAccountPageLocator.LOCATOR_REGION_CHOICE)
+        # country_field_florida.click()
+        # select = self.find_element_by_tag_name("country_id")
+        # select.select_by_value("FLORIDA") # ищем элемент с текстом "FLORIDA"
+        # select.click()
+
 
     def creating_account_3(self, password, confirm_password):
         password_field = self.find_element(CreatingAccountPageLocator.LOCATOR_PASSWORD)

@@ -4,3 +4,19 @@
 README.md
 .DS_Store
 *.pyc
+.DS_Store
+__pycache__
+/.idea/
+/.pytest_cache/
+/.run/
+/.venv/
+/.vscode/
+/.zed/
+/allure-report/
+/allure-results/
+# /pages/__pycache__/
+# /pages/Education/__pycache__/
+# /pages/Markets/__pycache__/
+/report/
+# /src/__pycharm__/
+# /test_data/__pycache__

@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait as Wait
 
 
 
+
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
@@ -25,6 +26,9 @@ class BasePage:
         return Wait(self.driver, timeout).until(
             EC.visibility_of_element_located(locator)
         )
+
+    def pytest_html_report_title(report):
+        report.title = "REPORT"
     # def select_by_value(self,"text"):
     #     self.driver.get(self.base_page)
 

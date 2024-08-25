@@ -1,6 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import WebDriverWait as Wait
+
 
 
 class BasePage:
@@ -19,6 +20,11 @@ class BasePage:
         return WebDriverWait(self.driver, time).until(
             EC.presence_of_all_elements_located(locator),
             message=f'Can not find element {locator}')
+
+    def element_is_visible(self, locator, timeout=1):
+        return Wait(self.driver, timeout).until(
+            EC.visibility_of_element_located(locator)
+        )
     # def select_by_value(self,"text"):
     #     self.driver.get(self.base_page)
 

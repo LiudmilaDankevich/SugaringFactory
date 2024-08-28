@@ -8,10 +8,10 @@ from selenium.webdriver.support.ui import WebDriverWait as Wait
 class BasePage:
     def __init__(self, driver):
         self.driver = driver
-        self.base_page = 'https://test.sugaringfactory.com/'
+        # self.base_page = 'https://test.sugaringfactory.com/'
 
-    def open_base_page(self):
-        self.driver.get(self.base_page)
+    # def open_base_page(self):
+    #     self.driver.get(self.base_page)
     def find_element(self, locator: tuple, time=10):
         return WebDriverWait(self.driver, time).until(
             EC.presence_of_element_located(locator),

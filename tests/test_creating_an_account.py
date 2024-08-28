@@ -10,6 +10,7 @@ class TestCreatingAccount:
         # main_page = MainPage(browser)
         # main_page.open_base_page()
         first_name, last_name = user_config_data
+        main_page = MainPage(browser)
         login_page = LoginPage(browser)
         login_page.open_login()
         account_page = CreatingAccountPage(browser)

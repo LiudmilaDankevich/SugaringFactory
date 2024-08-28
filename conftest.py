@@ -5,7 +5,7 @@ import json
 import os.path
 
 def load_config(file_path):
-    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),file_path)
+    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), file_path)
     with open(config_path) as f:
         target = json.load(f)
     return target
@@ -21,5 +21,5 @@ def browser():
 
 @pytest.fixture()
 def user_config_data():
-    config_data = load_config("resources/variables/user_data.json")
+    config_data = load_config("recources/variables/user_data.json")
     return config_data["first_name"], config_data["last_name"]

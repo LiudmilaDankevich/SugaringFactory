@@ -19,7 +19,10 @@ class CreatingAccountPageLocator:
     # LOCATOR_REGION_CHOICE = (By.XPATH,'//*[@id="register"]/div[2]/table/tbody/tr[11]/td/div/div/select/option[13]')
     LOCATOR_PASSWORD = (By.CSS_SELECTOR,'.q1[name="password"]')
     LOCATOR_CONFIRM_PASSWORD = (By.CSS_SELECTOR,'.q1[name="confirm"]')
-    LOCATOR_SUBSCRIBE_YES = (By.CSS_SELECTOR,'[class="radio inline"]:nth-child(1)>[value*="1"]')
+    LOCATOR_SUBSCRIBE_YES = (By.CSS_SELECTOR,'#register > div:nth-child(8) > table '
+                                             '> tbody > tr > td > div > div > '
+                                             'label:nth-child(1) > input[type=radio]')
+    # LOCATOR_SUBSCRIBE_YES = (By.CSS_SELECTOR, '[class="radio inline"][class="radio inline"]>[value*="1"]')
     LOCATOR_SUBSCRIBE_NO = (By.CSS_SELECTOR,'[class="radio inline"]>[value*="0"]')
     LOCATOR_CODE_CAPTCHA = (By.XPATH,'[name=captcha]')
     LOCATOR_CAPTCHA_IMAGE = (By.CSS_SELECTOR, '[src="index.php?route=account/register/captcha"] ')

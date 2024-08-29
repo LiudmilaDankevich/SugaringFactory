@@ -7,4 +7,4 @@ class LoginPageLocator:
     LOCATOR_EMAIL_FIELD = (By.XPATH, '//*[@id="login"]/div/div[1]/div/input')
     LOCATOR_PASSWD_FIELD = (By.XPATH, '//*[@id="login"]/div/div[2]/div/input')
     # LOCATOR_REMEMBER_ME = (By.XPATH, '// input[ @ name = "remember_me"]')
-    LOCATOR_SING_IN_BUTTON = (By.XPATH, '//*[@id="login"]/div/div[3]/a[1]')
+    # LOCATOR_SING_IN_BUTTON = (By.XPATH, '//*[@id="login"]/div/div[3]/a[1]')

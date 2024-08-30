@@ -27,8 +27,8 @@ class BasePage:
             EC.visibility_of_element_located(locator)
         )
 
-    def pytest_html_report_title(report):
-        report.title = "REPORT"
+    # def pytest_html_report_title(report):
+    #     report.title = "REPORT"
     # def select_by_value(self,"text"):
     #     self.driver.get(self.base_page)
 

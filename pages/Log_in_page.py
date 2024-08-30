@@ -18,3 +18,11 @@ class LoginPage(BasePage):
         sing_in_button.click()
         sleep(5)
 
+    def should_be_user_page(self):
+        self.user_page_text_is_present()
+
+    def user_page_text_is_present(self):
+        auth_text = self.find_element(LoginPageLocator.LOCATOR_MY_ACCOUNT_IS_PRESENT).text
+        check_text = 'My Account'
+        assert auth_text == check_text, f'{auth_text} is not eq {check_text}'
+

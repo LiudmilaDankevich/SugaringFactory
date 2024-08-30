@@ -6,8 +6,7 @@ from datetime import datetime
 
 from pages.base_page import BasePage
 
-
-
+# Создает пользователя сразу на бэк и возвращает логин и пароль
 def create_user_api(browser):
     url = 'https://test.sugaringfactory.com/index.php?route=account%2Fregister'
     email = f"user_{datetime.now().strftime('%d%m%Y_%H_%M_%f')}@gmail.com"

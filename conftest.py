@@ -1,8 +1,12 @@
+import requests
 from selenium import webdriver
 import pytest
 from selenium.webdriver.support.ui import Select
 import json
 import os.path
+
+from urllib3 import request
+
 from pages.main_page import MainPage
 from pages.Log_in_page import LoginPage
 from recources.api.user_api import create_user_api
@@ -16,12 +20,17 @@ def load_config(file_path):
     return target
 
 @pytest.fixture()
-def browser():
+def browser(request):
     driver = webdriver.Chrome()
-    driver.get('https://test.sugaringfactory.com/')
     driver.maximize_window()
     driver.implicitly_wait(5)
+    driver.get('https://test.sugaringfactory.com/')
+    # Делает скриншоты упавших тестов в момент ошибки
+    failed_before = request.session.testsfailed
     yield driver
+    if request.session.testsfailed != failed_before:
+        test_name = request.node.name
+        take_screenshot(driver, test_name)
     driver.quit()
 
 @pytest.fixture()
@@ -40,3 +49,10 @@ def create_user_and_login(browser):
     main_page.should_be_login_page()
     login_page = LoginPage(browser)
     login_page.login(email, password)
+
+# Путь куда нужно сохранить скриншот
+def take_screenshot(browser, test_name):
+    screenshot_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                  "failure_screenshots")
+    screenshot_file_path = f"{screenshot_dir}/{test_name}.png"
+    browser.save_screenshot(screenshot_file_path)
